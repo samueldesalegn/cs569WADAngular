@@ -1,0 +1,20 @@
+POST http://localhost:3000/api/todos
+Content-Type: application/json
+
+{"title": "Morning walk", "description": "Walk for 15 mins in the morning"}
+// {success: boolean, data: Todo}
+###
+GET http://localhost:3000/api/todos?page=1
+// {success: boolean, data: Todo[], next: boolean}
+###
+GET http://localhost:3000/api/todos/655226e5fcf15527fbfcb106
+// {success: boolean, data: Todo | null}
+###
+DELETE http://localhost:3000/api/todos/65522309e6be7c1ed2d02227
+//{success: boolean, data: { deletedCount: number } }
+###
+PUT http://localhost:3000/api/todos/655226e5fcf15527fbfcb106
+Content-Type: application/json
+
+{"title": "Afternoon walk", "description": "Walk for 15 mins in the afternoon"}
+// {success: boolean, data: { modifiedCount: number } }
